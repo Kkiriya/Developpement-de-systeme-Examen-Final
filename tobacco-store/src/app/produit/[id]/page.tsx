@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products } from "@/app/data/product";
@@ -24,24 +25,27 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-12">
-      {/* Back button */}
       <Link
         href="/catalogue"
-        className="text-sm font-semibold text-slate-600 transition hover:text-sky-600 dark:text-slate-400 dark:hover:text-sky-400"
+        className="text-sm font-semibold text-sky-600 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300"
       >
         ← Retour au catalogue
       </Link>
 
-      <div className="mt-8 grid gap-12 lg:grid-cols-2">
+      <div className="mt-8 grid gap-10 lg:grid-cols-2">
         {/* Product image */}
-        <div className="flex min-h-[450px] items-center justify-center overflow-hidden rounded-2xl bg-slate-200 dark:bg-slate-800">
-          <span className="text-slate-500 dark:text-slate-400">
-            Image du produit
-          </span>
+        <div className="relative min-h-[450px] overflow-hidden rounded-2xl bg-slate-200 dark:bg-slate-800">
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
         {/* Product information */}
-        <div>
+        <div className="flex flex-col justify-center">
           <span className="text-sm font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400">
             {product.category}
           </span>
@@ -50,7 +54,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
             {product.name}
           </h1>
 
-          {/* Price */}
+          <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-400">
+            {product.description}
+          </p>
+
           <div className="mt-6 flex items-baseline gap-2">
             <span className="text-3xl font-bold text-sky-600 dark:text-sky-400">
               {formattedPrice}
@@ -61,38 +68,22 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </span>
           </div>
 
-          <p className="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-400">
-            {product.description}
-          </p>
-
-          {/* Details */}
-          <div className="mt-10 border-t border-slate-200 pt-8 dark:border-slate-800">
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
-              Informations du produit
+          <div className="mt-8 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
+            <h2 className="text-lg font-bold text-slate-900 dark:text-white">
+              Informations
             </h2>
 
-            <dl className="mt-5 divide-y divide-slate-200 dark:divide-slate-800">
-              {product.details.map((detail, index) => (
-                <div key={index} className="flex gap-4 py-4 text-sm">
-                  <dt className="min-w-24 font-semibold text-slate-900 dark:text-white">
-                    Information
-                  </dt>
-
-                  <dd className="text-slate-600 dark:text-slate-400">
-                    {detail}
-                  </dd>
-                </div>
+            <ul className="mt-4 space-y-3">
+              {product.details.map((detail) => (
+                <li
+                  key={detail}
+                  className="flex gap-3 text-sm text-slate-600 dark:text-slate-400"
+                >
+                  <span className="text-sky-600 dark:text-sky-400">•</span>
+                  {detail}
+                </li>
               ))}
-            </dl>
-          </div>
-
-          {/* Academic notice */}
-          <div className="mt-8 rounded-lg border border-sky-200 bg-sky-50 p-5 dark:border-sky-900 dark:bg-sky-950">
-            <p className="text-sm leading-6 text-sky-900 dark:text-sky-200">
-              Cette fiche est présentée dans le cadre d&apos;une maquette
-              académique. Aucun achat ou commande n&apos;est effectué depuis
-              cette interface.
-            </p>
+            </ul>
           </div>
         </div>
       </div>
