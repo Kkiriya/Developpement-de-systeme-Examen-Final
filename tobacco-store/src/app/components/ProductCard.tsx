@@ -1,12 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+
 import type { Product } from "@/app/data/product";
+import { useLanguage } from "./LanguageProvider";
 
 type ProductCardProps = {
   product: Product;
 };
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const { t } = useLanguage();
+
   const formattedPrice = new Intl.NumberFormat("fr-CA", {
     style: "currency",
     currency: "CAD",
@@ -50,7 +56,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           href={`/produit/${product.id}`}
           className="mt-5 block rounded-lg bg-sky-600 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-sky-700"
         >
-          Voir les détails
+          {t.product.information}
         </Link>
       </div>
     </article>

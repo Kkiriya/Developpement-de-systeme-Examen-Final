@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLanguage } from "./LanguageProvider";
 
 export default function FontSizeToggle() {
+  const { t } = useLanguage();
+
   const [largeText, setLargeText] = useState(() => {
     if (typeof window === "undefined") {
       return false;
@@ -28,22 +31,22 @@ export default function FontSizeToggle() {
   return (
     <div className="flex items-center gap-3">
       <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">
-        Taille du texte
+        {t.header.textSize}
       </span>
 
       <button
         type="button"
         role="switch"
         aria-checked={largeText}
-        aria-label="Activer le texte plus grand"
+        aria-label={t.header.enableLargeText}
         onClick={toggleLargeText}
-        className={`relative h-7 w-12 shrink-0 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 ${
+        className={`relative h-[28px] w-[48px] shrink-0 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 ${
           largeText ? "bg-sky-600" : "bg-slate-300 dark:bg-slate-700"
         }`}
       >
         <span
-          className={`absolute left-1 top-1 h-5 w-5 rounded-full bg-white shadow-md transition-transform duration-200 ${
-            largeText ? "translate-x-5" : ""
+          className={`absolute left-[4px] top-[4px] h-[20px] w-[20px] rounded-full bg-white shadow-md transition-transform duration-200 ${
+            largeText ? "translate-x-[20px]" : ""
           }`}
         />
       </button>

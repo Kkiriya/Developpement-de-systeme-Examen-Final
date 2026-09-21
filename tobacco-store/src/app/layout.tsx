@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import { LanguageProvider } from "@/app/components/LanguageProvider";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,15 +19,17 @@ export default function RootLayout({
   return (
     <html lang="fr" suppressHydrationWarning>
       <body className="min-h-screen text-slate-900 dark:text-slate-100">
-        <div className="flex min-h-screen flex-col">
-          <Header />
+        <LanguageProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
 
-          <main className="flex-1 bg-slate-50 dark:bg-slate-950">
-            {children}
-          </main>
+            <main className="flex-1 bg-slate-50 dark:bg-slate-950">
+              {children}
+            </main>
 
-          <Footer />
-        </div>
+            <Footer />
+          </div>
+        </LanguageProvider>
       </body>
     </html>
   );
