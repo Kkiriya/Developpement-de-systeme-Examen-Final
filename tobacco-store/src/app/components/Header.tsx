@@ -28,14 +28,6 @@ export default function Header() {
             Catalogue
           </Link>
         </nav>
-
-        {/* Search button */}
-        <Link
-          href="/catalogue"
-          className="rounded-lg bg-sky-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-700"
-        >
-          Rechercher
-        </Link>
       </div>
     </header>
   );
