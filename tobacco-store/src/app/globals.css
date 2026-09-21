@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #ffffff;
@@ -23,4 +24,16 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   Accessibility - Large Text
+   ========================================= */
+
+html {
+  font-size: 16px;
+}
+
+html.large-text {
+  font-size: 18px;
 }

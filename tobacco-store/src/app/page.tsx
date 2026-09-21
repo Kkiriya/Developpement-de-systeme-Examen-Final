@@ -35,56 +35,58 @@ export default function Home() {
       </section>
 
       {/* Categories */}
-      <section className="mx-auto max-w-7xl px-6 py-16">
-        <div className="mb-8">
-          <p className="text-sm font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400">
-            Catégories
-          </p>
-
-          <h2 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">
-            Parcourir par catégorie
-          </h2>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-3">
-          <Link
-            href="/catalogue?category=tabac"
-            className="rounded-xl border border-slate-200 bg-white p-6 transition hover:border-sky-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-700"
-          >
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-              Tabac
-            </h3>
-
-            <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-              Consultez les produits de la catégorie tabac.
+      <section className="bg-slate-50 dark:bg-slate-950">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <div className="mb-8">
+            <p className="text-sm font-semibold uppercase tracking-widest text-sky-600 dark:text-sky-400">
+              Catégories
             </p>
-          </Link>
 
-          <Link
-            href="/catalogue?category=tabac%20en%20feuille"
-            className="rounded-xl border border-slate-200 bg-white p-6 transition hover:border-sky-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-700"
-          >
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-              Tabac en feuille
-            </h3>
+            <h2 className="mt-2 text-3xl font-bold text-slate-900 dark:text-white">
+              Parcourir par catégorie
+            </h2>
+          </div>
 
-            <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-              Découvrez les produits de tabac en feuille.
-            </p>
-          </Link>
+          <div className="grid gap-6 md:grid-cols-3">
+            <Link
+              href="/catalogue?category=tabac"
+              className="rounded-xl border border-slate-200 bg-white p-6 transition hover:border-sky-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-700"
+            >
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                Tabac
+              </h3>
 
-          <Link
-            href="/catalogue?category=accessoires"
-            className="rounded-xl border border-slate-200 bg-white p-6 transition hover:border-sky-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-700"
-          >
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white">
-              Accessoires
-            </h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                Consultez les produits de la catégorie tabac.
+              </p>
+            </Link>
 
-            <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
-              Consultez les accessoires disponibles dans le catalogue.
-            </p>
-          </Link>
+            <Link
+              href="/catalogue?category=tabac%20en%20feuille"
+              className="rounded-xl border border-slate-200 bg-white p-6 transition hover:border-sky-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-700"
+            >
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                Tabac en feuille
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                Découvrez les produits de tabac en feuille.
+              </p>
+            </Link>
+
+            <Link
+              href="/catalogue?category=accessoires"
+              className="rounded-xl border border-slate-200 bg-white p-6 transition hover:border-sky-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-700"
+            >
+              <h3 className="text-lg font-bold text-slate-900 dark:text-white">
+                Accessoires
+              </h3>
+
+              <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                Consultez les accessoires disponibles dans le catalogue.
+              </p>
+            </Link>
+          </div>
         </div>
       </section>
 

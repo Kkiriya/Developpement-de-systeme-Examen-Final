@@ -1,4 +1,6 @@
 import Link from "next/link";
+import FontSizeToggle from "./FontSizeToggle";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
@@ -11,7 +13,6 @@ export default function Header() {
         >
           Air<span className="text-sky-600 dark:text-sky-400">Smokes</span> 🌿
         </Link>
-
         {/* Navigation */}
         <nav className="hidden items-center gap-8 md:flex">
           <Link
@@ -28,6 +29,11 @@ export default function Header() {
             Catalogue
           </Link>
         </nav>
+        {/* Accessibility controls */}{" "}
+        <div className="flex items-center gap-6">
+          {" "}
+          <FontSizeToggle /> <ThemeToggle />{" "}
+        </div>
       </div>
     </header>
   );
