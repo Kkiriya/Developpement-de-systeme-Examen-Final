@@ -48,7 +48,7 @@ export default function Home() {
 
         <div className="grid gap-6 md:grid-cols-3">
           <Link
-            href="/catalogue"
+            href="/catalogue?category=tabac"
             className="rounded-xl border border-slate-200 bg-white p-6 transition hover:border-sky-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-700"
           >
             <h3 className="text-lg font-bold text-slate-900 dark:text-white">
@@ -61,7 +61,7 @@ export default function Home() {
           </Link>
 
           <Link
-            href="/catalogue"
+            href="/catalogue?category=tabac%20en%20feuille"
             className="rounded-xl border border-slate-200 bg-white p-6 transition hover:border-sky-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-700"
           >
             <h3 className="text-lg font-bold text-slate-900 dark:text-white">
@@ -74,7 +74,7 @@ export default function Home() {
           </Link>
 
           <Link
-            href="/catalogue"
+            href="/catalogue?category=accessoires"
             className="rounded-xl border border-slate-200 bg-white p-6 transition hover:border-sky-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-700"
           >
             <h3 className="text-lg font-bold text-slate-900 dark:text-white">

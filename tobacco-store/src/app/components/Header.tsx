@@ -9,7 +9,7 @@ export default function Header() {
           href="/"
           className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
         >
-          Air<span className="text-sky-600 dark:text-sky-400">Smokes</span>
+          Air<span className="text-sky-600 dark:text-sky-400">Smokes</span> 🌿
         </Link>
 
         {/* Navigation */}
