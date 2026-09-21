@@ -23,7 +23,7 @@ export const products: Product[] = [
       "Origine : Amérique du Nord",
       "Catégorie : tabac en feuille",
     ],
-    image: "/products/tobacco-leaf.jpg",
+    image: "tobacco-store/public/products/tobacco-leaf.jpg",
   },
   {
     id: "feuilles-rouler",
@@ -34,7 +34,7 @@ export const products: Product[] = [
     description:
       "Exemple de produit présenté dans le catalogue de démonstration.",
     details: ["Format : feuilles", "Catégorie : accessoires"],
-    image: "/products/rolling-papers.jpg",
+    image: "tobacco-store/public/products/rolling-papers.jpg",
   },
   {
     id: "cigarette-prerouler",
@@ -45,6 +45,6 @@ export const products: Product[] = [
     description:
       "Exemple de produit présenté dans le catalogue de démonstration.",
     details: ["Format : cigarette", "Catégorie : Tabac"],
-    image: "/products/cigarettes.jpg",
+    image: "tobacco-store/public/products/cigarettes.jpg",
   },
 ];

@@ -2,34 +2,37 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="border-b border-stone-200 bg-white">
+    <header className="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        {/* Logo */}
         <Link
           href="/"
-          className="text-2xl font-bold tracking-tight text-stone-900"
+          className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white"
         >
-          Tabac<span className="text-amber-700">+</span>
+          Air<span className="text-sky-600 dark:text-sky-400">Smokes</span>
         </Link>
 
-        <nav className="hidden gap-8 md:flex">
+        {/* Navigation */}
+        <nav className="hidden items-center gap-8 md:flex">
           <Link
             href="/"
-            className="text-sm font-medium text-stone-700 transition hover:text-amber-700"
+            className="text-sm font-medium text-slate-600 transition hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-400"
           >
             Accueil
           </Link>
 
           <Link
             href="/catalogue"
-            className="text-sm font-medium text-stone-700 transition hover:text-amber-700"
+            className="text-sm font-medium text-slate-600 transition hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-400"
           >
             Catalogue
           </Link>
         </nav>
 
+        {/* Search button */}
         <Link
           href="/catalogue"
-          className="rounded-lg bg-stone-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-stone-700"
+          className="rounded-lg bg-sky-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-sky-700"
         >
           Rechercher
         </Link>

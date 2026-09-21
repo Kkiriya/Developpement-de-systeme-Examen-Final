@@ -1,29 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "AirSmokes",
-  description: "Catalogue de produits de tabagie",
+  description: "Catalogue de produits — projet scolaire",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="fr">
-      <body className="min-h-screen bg-stone-50 text-stone-900">
+      <body className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
         <div className="flex min-h-screen flex-col">
           <Header />
 
