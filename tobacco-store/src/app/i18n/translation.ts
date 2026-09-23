@@ -145,6 +145,13 @@ export const translations = {
       wheelCongratulations: "Félicitations !",
       rewardsDescription:
         "Échangez vos points contre des récompenses et des avantages.",
+
+      activeCoupons: "Coupons actifs",
+      activeCouponsDescription:
+        "Vos coupons disponibles peuvent être utilisés lors de votre prochaine commande.",
+      noActiveCoupons: "Vous n'avez aucun coupon actif pour le moment.",
+      discountLabel: "de réduction",
+      availableCoupon: "Coupon disponible",
     },
 
     cart: {
@@ -379,6 +386,14 @@ export const translations = {
       wheelModalDescription: "A random reward is waiting for you. Good luck!",
       wheelCongratulations: "Congratulations!",
       rewardsDescription: "Exchange your points for rewards and benefits.",
+
+      activeCoupons: "Active coupons",
+      activeCouponsDescription:
+        "Your available coupons can be used on your next order.",
+      noActiveCoupons: "You don't have any active coupons at the moment.",
+
+      discountLabel: "off",
+      availableCoupon: "Available coupon",
     },
 
     cart: {
@@ -651,6 +666,14 @@ export const translations = {
         "Una recompensa aleatoria te está esperando. ¡Buena suerte!",
       wheelCongratulations: "¡Felicidades!",
       rewardsDescription: "Canjea tus puntos por recompensas y beneficios.",
+
+      activeCoupons: "Cupones activos",
+      activeCouponsDescription:
+        "Tus cupones disponibles pueden utilizarse en tu próximo pedido.",
+      noActiveCoupons: "No tienes ningún cupón activo en este momento.",
+
+      discountLabel: "de descuento",
+      availableCoupon: "Cupón disponible",
     },
 
     cart: {

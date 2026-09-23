@@ -333,6 +333,73 @@ export default function RewardsPage() {
           </div>
         )}
 
+        {/* Active Coupons */}
+        <section className="mb-10 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <div className="mb-6">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-xl dark:bg-green-950">
+                🎟️
+              </div>
+
+              <div>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+                  {t.rewards.activeCoupons}
+                </h2>
+
+                <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+                  {t.rewards.activeCouponsDescription}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {redeemedCoupons.length === 0 ? (
+            <div className="rounded-xl border border-dashed border-slate-300 bg-slate-50 px-6 py-8 text-center dark:border-slate-700 dark:bg-slate-800/50">
+              <p className="text-sm text-slate-500 dark:text-slate-400">
+                {t.rewards.noActiveCoupons}
+              </p>
+            </div>
+          ) : (
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {redeemedCoupons.map((couponCode) => {
+                const couponDiscounts: Record<string, number> = {
+                  POINTS5: 5,
+                  POINTS10: 10,
+                  POINTS15: 15,
+                  WHEEL25: 25,
+                  WHEEL30: 30,
+                  WHEEL40: 40,
+                };
+
+                const discount = couponDiscounts[couponCode];
+
+                return (
+                  <div
+                    key={couponCode}
+                    className="flex items-center justify-between gap-4 rounded-xl border border-green-200 bg-green-50 p-5 shadow-sm dark:border-green-900 dark:bg-green-950/40"
+                  >
+                    <div>
+                      <span className="inline-flex rounded-md bg-green-600 px-3 py-1.5 font-mono text-sm font-bold tracking-wide text-white dark:bg-green-500 dark:text-white">
+                        {couponCode}
+                      </span>
+
+                      <p className="mt-2 text-xs font-medium text-green-700 dark:text-green-300">
+                        {discount
+                          ? `${discount}% ${t.rewards.discountLabel}`
+                          : t.rewards.availableCoupon}
+                      </p>
+                    </div>
+
+                    <span className="text-lg font-bold text-green-600 dark:text-green-400">
+                      {discount ? `-${discount}%` : "✓"}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </section>
+
         {/* Rewards */}
         <section>
           <div className="mb-5">
@@ -454,9 +521,7 @@ export default function RewardsPage() {
               >
                 {wheelPrizes.map((prize, index) => {
                   const sliceAngle = 360 / wheelPrizes.length;
-
                   const textAngle = index * sliceAngle + sliceAngle / 2 - 90;
-
                   const textRadius = 150;
 
                   const textX =
