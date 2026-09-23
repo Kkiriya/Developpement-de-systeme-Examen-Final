@@ -6,10 +6,12 @@ import { useParams } from "next/navigation";
 
 import { products } from "@/app/data/product";
 import { useLanguage } from "@/app/components/LanguageProvider";
+import { useCart } from "@/app/components/CartContext";
 
 export default function ProductPage() {
   const params = useParams();
   const { t } = useLanguage();
+  const { addToCart } = useCart();
 
   const id = params.id as string;
 
@@ -79,6 +81,29 @@ export default function ProductPage() {
               / {product.qty}
             </span>
           </div>
+
+          <button
+            type="button"
+            onClick={() => addToCart(product)}
+            className="mt-8 flex items-center justify-center gap-3 rounded-xl bg-sky-600 px-6 py-4 text-base font-semibold text-white shadow-sm transition hover:bg-sky-700"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className="h-6 w-6"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M2.25 3h1.386c.51 0 .955.343 1.087.836L5.6 6.75m0 0h13.65c.668 0 1.163.615.994 1.262l-1.35 5.25a1 1 0 0 1-.97.75H8.07a1 1 0 0 1-.97-.757L5.6 6.75Zm2.47 7.262-1 3.5a1 1 0 0 0 .963 1.275h10.434M9 21a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm9 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"
+              />
+            </svg>
+            Ajouter au panier
+          </button>
 
           <div className="mt-8 rounded-xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-900">
             <h2 className="text-lg font-bold text-slate-900 dark:text-white">
