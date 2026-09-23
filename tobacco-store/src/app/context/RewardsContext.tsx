@@ -25,6 +25,14 @@ interface RewardsContextType extends RewardsData {
 
   consumeCoupon: (couponCode: string) => boolean;
   consumeStoreCredit: (amount: number) => number;
+  consumeFreeShipping: () => boolean;
+
+  awardWheelPrize: (prizeId: string) => void;
+  spinWheel: () => boolean;
+
+  wheelOpen: boolean;
+  openWheel: () => void;
+  closeWheel: () => void;
 }
 
 const defaultRewards: RewardsData = {
@@ -54,6 +62,8 @@ export function RewardsProvider({ children }: { children: ReactNode }) {
       return defaultRewards;
     }
   });
+
+  const [wheelOpen, setWheelOpen] = useState(false);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(rewards));
@@ -158,6 +168,105 @@ export function RewardsProvider({ children }: { children: ReactNode }) {
     return creditUsed;
   }
 
+  function consumeFreeShipping() {
+    if (!rewards.freeShipping) {
+      return false;
+    }
+
+    setRewards((current) => ({
+      ...current,
+      freeShipping: false,
+    }));
+
+    return true;
+  }
+
+  function awardWheelPrize(prizeId: string) {
+    setRewards((current) => {
+      switch (prizeId) {
+        case "discount25":
+          return current.redeemedCoupons.includes("WHEEL25")
+            ? current
+            : {
+                ...current,
+                redeemedCoupons: [...current.redeemedCoupons, "WHEEL25"],
+              };
+
+        case "discount30":
+          return current.redeemedCoupons.includes("WHEEL30")
+            ? current
+            : {
+                ...current,
+                redeemedCoupons: [...current.redeemedCoupons, "WHEEL30"],
+              };
+
+        case "discount40":
+          return current.redeemedCoupons.includes("WHEEL40")
+            ? current
+            : {
+                ...current,
+                redeemedCoupons: [...current.redeemedCoupons, "WHEEL40"],
+              };
+
+        case "points5000":
+          return {
+            ...current,
+            points: current.points + 5000,
+          };
+
+        case "points10000":
+          return {
+            ...current,
+            points: current.points + 10000,
+          };
+
+        case "points20000":
+          return {
+            ...current,
+            points: current.points + 20000,
+          };
+
+        case "credit10":
+          return {
+            ...current,
+            storeCredit: current.storeCredit + 10,
+          };
+
+        case "freeShipping":
+          return {
+            ...current,
+            freeShipping: true,
+          };
+
+        default:
+          return current;
+      }
+    });
+  }
+
+  function spinWheel() {
+    const cost = 10000;
+
+    if (rewards.points < cost) {
+      return false;
+    }
+
+    setRewards((current) => ({
+      ...current,
+      points: current.points - cost,
+    }));
+
+    return true;
+  }
+
+  function openWheel() {
+    setWheelOpen(true);
+  }
+
+  function closeWheel() {
+    setWheelOpen(false);
+  }
+
   return (
     <RewardsContext.Provider
       value={{
@@ -173,6 +282,14 @@ export function RewardsProvider({ children }: { children: ReactNode }) {
 
         consumeCoupon,
         consumeStoreCredit,
+        consumeFreeShipping,
+
+        awardWheelPrize,
+        spinWheel,
+
+        wheelOpen,
+        openWheel,
+        closeWheel,
       }}
     >
       {children}

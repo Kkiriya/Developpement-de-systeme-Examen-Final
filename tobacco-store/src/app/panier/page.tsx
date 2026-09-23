@@ -16,9 +16,11 @@ export default function CartPage() {
   const {
     earnPoints,
     storeCredit,
+    freeShipping,
     redeemedCoupons,
     consumeCoupon,
     consumeStoreCredit,
+    consumeFreeShipping,
   } = useRewards();
 
   const [coupon, setCoupon] = useState("");
@@ -38,6 +40,10 @@ export default function CartPage() {
     POINTS5: 0.05,
     POINTS10: 0.1,
     POINTS15: 0.15,
+
+    WHEEL25: 0.25,
+    WHEEL30: 0.3,
+    WHEEL40: 0.4,
   };
 
   const discountRate = appliedCoupon ? (coupons[appliedCoupon] ?? 0) : 0;
@@ -61,8 +67,8 @@ export default function CartPage() {
    */
   const pointsEarned = Math.floor(discountedSubtotal) * 100;
 
-  function formatPoints(points: number) {
-    return points.toLocaleString(language === "fr" ? "fr-CA" : language);
+  function formatPoints(value: number) {
+    return value.toLocaleString(language === "fr" ? "fr-CA" : language);
   }
 
   function formatPrice(value: number) {
@@ -128,15 +134,32 @@ export default function CartPage() {
 
     /*
      * Only consume the coupon if it came from
-     * the rewards system. Demo coupons remain
-     * reusable.
+     * the rewards system.
+     *
+     * Demo coupons remain reusable.
      */
     if (appliedCoupon && redeemedCoupons.includes(appliedCoupon)) {
       consumeCoupon(appliedCoupon);
     }
 
+    /*
+     * Store credit is consumed after the order
+     * uses it.
+     */
     if (creditApplied > 0) {
       consumeStoreCredit(creditApplied);
+    }
+
+    /*
+     * Free shipping is consumed when the order
+     * is completed.
+     *
+     * There is currently no shipping charge in
+     * the prototype, so this simply consumes the
+     * reward for the order.
+     */
+    if (freeShipping) {
+      consumeFreeShipping();
     }
 
     items.forEach((item) => {
@@ -391,6 +414,19 @@ export default function CartPage() {
               </div>
             )}
           </div>
+
+          {/* Free shipping */}
+          {freeShipping && (
+            <div className="mt-6 rounded-xl border border-green-200 bg-green-50 p-4 dark:border-green-900 dark:bg-green-950/30">
+              <p className="text-sm font-semibold text-green-700 dark:text-green-400">
+                ✓ {t.rewards.freeShipping}
+              </p>
+
+              <p className="mt-1 text-xs text-green-600 dark:text-green-500">
+                {t.rewards.available}
+              </p>
+            </div>
+          )}
 
           {/* Store credit */}
           <div className="mt-6 border-t border-slate-200 pt-6 dark:border-slate-700">

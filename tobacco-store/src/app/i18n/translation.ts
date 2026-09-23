@@ -94,6 +94,27 @@ export const translations = {
       coupon15Description:
         "Obtenez 15 % de rabais sur votre prochaine commande.",
 
+      wheel25: "Coupon 25 %",
+      wheel25Description:
+        "Un coupon de 25 % obtenu avec la roue de la fortune.",
+
+      wheel30: "Coupon 30 %",
+      wheel30Description:
+        "Un coupon de 30 % obtenu avec la roue de la fortune.",
+
+      wheel40: "Coupon 40 %",
+      wheel40Description:
+        "Un coupon de 40 % obtenu avec la roue de la fortune.",
+
+      points5000: "+5 000 points",
+      points5000Description: "Gagnez 5 000 points supplémentaires.",
+
+      points10000: "+10 000 points",
+      points10000Description: "Gagnez 10 000 points supplémentaires.",
+
+      points20000: "+20 000 points",
+      points20000Description: "Gagnez 20 000 points supplémentaires.",
+
       shippingReward: "Livraison gratuite",
       shippingDescription: "Obtenez la livraison gratuite sur une commande.",
 
@@ -105,6 +126,11 @@ export const translations = {
 
       credit20: "Crédit de 20 $",
       credit20Description: "Ajoutez 20 $ de crédit à votre compte.",
+
+      availableCoupons: "Mes coupons disponibles",
+      availableCouponsDescription:
+        "Ces coupons peuvent être utilisés une seule fois lors d'une commande.",
+      couponCode: "Code du coupon",
     },
 
     cart: {
@@ -291,6 +317,24 @@ export const translations = {
       coupon15: "15% Coupon",
       coupon15Description: "Get 15% off your next order.",
 
+      wheel25: "25% Coupon",
+      wheel25Description: "A 25% coupon won from the Wheel of Fortune.",
+
+      wheel30: "30% Coupon",
+      wheel30Description: "A 30% coupon won from the Wheel of Fortune.",
+
+      wheel40: "40% Coupon",
+      wheel40Description: "A 40% coupon won from the Wheel of Fortune.",
+
+      points5000: "+5,000 points",
+      points5000Description: "Win 5,000 additional points.",
+
+      points10000: "+10,000 points",
+      points10000Description: "Win 10,000 additional points.",
+
+      points20000: "+20,000 points",
+      points20000Description: "Win 20,000 additional points.",
+
       shippingReward: "Free shipping",
 
       shippingDescription: "Get free shipping on one order.",
@@ -303,6 +347,13 @@ export const translations = {
 
       credit20: "$20 Credit",
       credit20Description: "Add $20 of credit to your account.",
+
+      availableCoupons: "My available coupons",
+
+      availableCouponsDescription:
+        "These coupons can be used once on an order.",
+
+      couponCode: "Coupon code",
     },
 
     cart: {
@@ -514,6 +565,33 @@ export const translations = {
 
       coupon15Description: "Obtén un 15 % de descuento en tu próximo pedido.",
 
+      wheel25: "Cupón del 25 %",
+
+      wheel25Description:
+        "Un cupón del 25 % obtenido en la rueda de la fortuna.",
+
+      wheel30: "Cupón del 30 %",
+
+      wheel30Description:
+        "Un cupón del 30 % obtenido en la rueda de la fortuna.",
+
+      wheel40: "Cupón del 40 %",
+
+      wheel40Description:
+        "Un cupón del 40 % obtenido en la rueda de la fortuna.",
+
+      points5000: "+5.000 puntos",
+
+      points5000Description: "Gana 5.000 puntos adicionales.",
+
+      points10000: "+10.000 puntos",
+
+      points10000Description: "Gana 10.000 puntos adicionales.",
+
+      points20000: "+20.000 puntos",
+
+      points20000Description: "Gana 20.000 puntos adicionales.",
+
       shippingReward: "Envío gratis",
 
       shippingDescription: "Obtén envío gratis en un pedido.",
@@ -529,6 +607,13 @@ export const translations = {
       credit20: "Crédito de 20 $",
 
       credit20Description: "Añade 20 $ de crédito a tu cuenta.",
+
+      availableCoupons: "Mis cupones disponibles",
+
+      availableCouponsDescription:
+        "Estos cupones pueden utilizarse una vez en un pedido.",
+
+      couponCode: "Código del cupón",
     },
 
     cart: {
