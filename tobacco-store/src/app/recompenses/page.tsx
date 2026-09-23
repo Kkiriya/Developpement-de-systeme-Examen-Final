@@ -296,17 +296,15 @@ export default function RewardsPage() {
             </div>
 
             <h2 className="mt-4 text-2xl font-bold text-slate-900 dark:text-white">
-              Roulez la roue !
+              {t.rewards.wheelTitle}
             </h2>
 
             <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-300">
-              Tentez votre chance et gagnez une récompense aléatoire. Vous
-              pourriez obtenir un rabais, des points supplémentaires, du crédit
-              ou même la livraison gratuite !
+              {t.rewards.wheelDescription}
             </p>
 
             <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-700 dark:border-sky-900 dark:bg-sky-950/50 dark:text-sky-300">
-              ⭐ 10,000 {t.rewards.points} par tour
+              ⭐ {t.rewards.wheelCost}
             </div>
 
             <div>
@@ -316,13 +314,13 @@ export default function RewardsPage() {
                 disabled={points < 10000}
                 className="mt-6 rounded-lg bg-sky-600 px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-sky-700 hover:shadow-md disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500 disabled:shadow-none dark:disabled:bg-slate-700 dark:disabled:text-slate-400"
               >
-                🎡 Tourner la roue
+                🎡 {t.rewards.wheelButton}
               </button>
             </div>
 
             {points < 10000 && (
               <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">
-                Il vous faut 10,000 points pour faire tourner la roue.
+                {t.rewards.wheelInsufficientPoints}
               </p>
             )}
           </div>
@@ -343,7 +341,7 @@ export default function RewardsPage() {
             </h2>
 
             <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
-              Échangez vos points contre des récompenses et des avantages.
+              {t.rewards.rewardsDescription}
             </p>
           </div>
 
@@ -425,15 +423,15 @@ export default function RewardsPage() {
               </div>
 
               <h2 className="mt-4 text-2xl font-bold text-slate-900 dark:text-white">
-                Tentez votre chance !
+                {t.rewards.wheelModalTitle}
               </h2>
 
               <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-600 dark:text-slate-400">
-                Une récompense aléatoire vous attend. Bonne chance !
+                {t.rewards.wheelModalDescription}
               </p>
 
               <div className="mt-3 text-xs font-semibold text-sky-600 dark:text-sky-400">
-                10,000 {t.rewards.points}
+                {t.rewards.wheelCost}
               </div>
             </div>
 
@@ -532,7 +530,7 @@ export default function RewardsPage() {
             {wonPrize && (
               <div className="mx-auto mt-6 max-w-xl rounded-2xl bg-sky-50 p-6 text-center ring-1 ring-sky-200 dark:bg-sky-950/40 dark:ring-sky-900">
                 <p className="text-sm font-semibold uppercase tracking-wide text-sky-700 dark:text-sky-300">
-                  🎉 Félicitations !
+                  🎉 {t.rewards.wheelCongratulations}
                 </p>
 
                 <h3 className="mt-2 text-2xl font-bold text-slate-900 dark:text-white">
@@ -553,7 +551,7 @@ export default function RewardsPage() {
                 disabled={isSpinning || points < 10000}
                 className="rounded-lg bg-sky-600 px-8 py-3 font-bold text-white shadow-sm transition hover:bg-sky-700 hover:shadow-md disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500 disabled:shadow-none dark:disabled:bg-slate-700 dark:disabled:text-slate-400"
               >
-                {isSpinning ? "..." : `🎡 10,000 ${t.rewards.points}`}
+                {isSpinning ? "..." : `🎡 ${t.rewards.wheelButton}`}
               </button>
             </div>
           </div>

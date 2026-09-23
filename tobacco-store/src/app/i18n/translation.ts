@@ -131,6 +131,20 @@ export const translations = {
       availableCouponsDescription:
         "Ces coupons peuvent être utilisés une seule fois lors d'une commande.",
       couponCode: "Code du coupon",
+
+      wheelTitle: "Roulez la roue !",
+      wheelDescription:
+        "Tentez votre chance et gagnez une récompense aléatoire. Vous pourriez obtenir un rabais, des points supplémentaires, du crédit ou même la livraison gratuite !",
+      wheelCost: "10 000 points par tour",
+      wheelButton: "Tourner la roue",
+      wheelInsufficientPoints:
+        "Il vous faut 10 000 points pour faire tourner la roue.",
+      wheelModalTitle: "Tentez votre chance !",
+      wheelModalDescription:
+        "Une récompense aléatoire vous attend. Bonne chance !",
+      wheelCongratulations: "Félicitations !",
+      rewardsDescription:
+        "Échangez vos points contre des récompenses et des avantages.",
     },
 
     cart: {
@@ -354,6 +368,17 @@ export const translations = {
         "These coupons can be used once on an order.",
 
       couponCode: "Coupon code",
+
+      wheelTitle: "Spin the wheel!",
+      wheelDescription:
+        "Try your luck and win a random reward. You could get a discount, additional points, store credit, or even free shipping!",
+      wheelCost: "10,000 points per spin",
+      wheelButton: "Spin the wheel",
+      wheelInsufficientPoints: "You need 10,000 points to spin the wheel.",
+      wheelModalTitle: "Try your luck!",
+      wheelModalDescription: "A random reward is waiting for you. Good luck!",
+      wheelCongratulations: "Congratulations!",
+      rewardsDescription: "Exchange your points for rewards and benefits.",
     },
 
     cart: {
@@ -614,6 +639,18 @@ export const translations = {
         "Estos cupones pueden utilizarse una vez en un pedido.",
 
       couponCode: "Código del cupón",
+
+      wheelTitle: "¡Gira la rueda!",
+      wheelDescription:
+        "¡Prueba tu suerte y gana una recompensa aleatoria! Puedes obtener un descuento, puntos adicionales, crédito de tienda o incluso envío gratis.",
+      wheelCost: "10.000 puntos por giro",
+      wheelButton: "Girar la rueda",
+      wheelInsufficientPoints: "Necesitas 10.000 puntos para girar la rueda.",
+      wheelModalTitle: "¡Prueba tu suerte!",
+      wheelModalDescription:
+        "Una recompensa aleatoria te está esperando. ¡Buena suerte!",
+      wheelCongratulations: "¡Felicidades!",
+      rewardsDescription: "Canjea tus puntos por recompensas y beneficios.",
     },
 
     cart: {
