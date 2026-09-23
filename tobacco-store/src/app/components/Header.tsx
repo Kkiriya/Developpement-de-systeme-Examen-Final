@@ -7,15 +7,20 @@ import FontSizeToggle from "./FontSizeToggle";
 import ThemeToggle from "./ThemeToggle";
 import LanguageToggle from "./LanguageToggle";
 import { useLanguage } from "./LanguageProvider";
-import { useCart } from "./CartContext";
+
+import { useCart } from "@/app/context/CartContext";
+import { useRewards } from "@/app/context/RewardsContext";
 
 export default function Header() {
   const { t } = useLanguage();
   const { totalItems } = useCart();
+  const { points } = useRewards();
+
   const pathname = usePathname();
 
   const isHome = pathname === "/";
   const isCatalogue = pathname.startsWith("/catalogue");
+  const isRecompense = pathname.startsWith("/recompenses");
 
   return (
     <header className="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
@@ -30,6 +35,7 @@ export default function Header() {
 
         {/* Navigation */}
         <nav className="hidden items-center gap-2 md:flex">
+          {/* Home */}
           <Link
             href="/"
             className={`rounded-lg px-4 py-2 text-sm font-semibold transition ${
@@ -41,6 +47,7 @@ export default function Header() {
             {t.header.home}
           </Link>
 
+          {/* Catalogue */}
           <Link
             href="/catalogue"
             className={`rounded-lg px-4 py-2 text-sm font-semibold transition ${
@@ -51,6 +58,18 @@ export default function Header() {
           >
             {t.header.catalogue}
           </Link>
+
+          {/* Rewards */}
+          <Link
+            href="/recompenses"
+            className={`rounded-lg px-4 py-2 text-sm font-semibold transition ${
+              isRecompense
+                ? "bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-400"
+                : "text-slate-600 hover:bg-slate-100 hover:text-sky-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-sky-400"
+            }`}
+          >
+            {t.header.recompense}
+          </Link>
         </nav>
 
         {/* Right side controls */}
@@ -58,6 +77,15 @@ export default function Header() {
           <LanguageToggle />
           <FontSizeToggle />
           <ThemeToggle />
+
+          {/* Rewards points */}
+          <Link
+            href="/recompenses"
+            className="relative rounded-lg p-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100 hover:text-sky-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-sky-400"
+            aria-label={`${points} points de récompense`}
+          >
+            ⭐ {points.toLocaleString("fr-CA")} pts
+          </Link>
 
           {/* Cart */}
           <Link

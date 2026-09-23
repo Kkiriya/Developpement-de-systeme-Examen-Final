@@ -6,7 +6,7 @@ import { useParams } from "next/navigation";
 
 import { products } from "@/app/data/product";
 import { useLanguage } from "@/app/components/LanguageProvider";
-import { useCart } from "@/app/components/CartContext";
+import { useCart } from "@/app/context/CartContext";
 
 export default function ProductPage() {
   const params = useParams();

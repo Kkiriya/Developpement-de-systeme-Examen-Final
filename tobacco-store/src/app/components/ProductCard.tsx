@@ -5,7 +5,7 @@ import Link from "next/link";
 
 import type { Product } from "@/app/data/product";
 import { useLanguage } from "./LanguageProvider";
-import { useCart } from "./CartContext";
+import { useCart } from "../context/CartContext";
 
 type ProductCardProps = {
   product: Product;
